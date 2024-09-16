@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  EasyCard
+
+  Created by Veysal Hasanbayli on 16.09.24.
+  
+*/
+"enterYourName" = "Enter your name";
+"enterYourNumber" = "Enter your number";
+"selectYourBirthDate" = "Select your birth date";
+"yourBirthDate" = "Your birth date : ";
+
+"register" = "Sign Up";

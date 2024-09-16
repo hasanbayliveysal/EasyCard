@@ -8,22 +8,49 @@
 
 /* Begin PBXBuildFile section */
 		FCF17C072C98766200DD829B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF17C062C98766200DD829B /* AppDelegate.swift */; };
-		FCF17C092C98766200DD829B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF17C082C98766200DD829B /* SceneDelegate.swift */; };
 		FCF17C0B2C98766200DD829B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF17C0A2C98766200DD829B /* ViewController.swift */; };
-		FCF17C0E2C98766200DD829B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCF17C0C2C98766200DD829B /* Main.storyboard */; };
 		FCF17C102C98766B00DD829B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCF17C0F2C98766B00DD829B /* Assets.xcassets */; };
 		FCF17C132C98766B00DD829B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCF17C112C98766B00DD829B /* LaunchScreen.storyboard */; };
+		FCF17C1F2C987BDD00DD829B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF17C1E2C987BDD00DD829B /* HomeViewController.swift */; };
+		FCF17C212C987BE700DD829B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF17C202C987BE700DD829B /* LoginViewController.swift */; };
+		FCF17C232C987BF100DD829B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF17C222C987BF100DD829B /* RegisterViewController.swift */; };
+		FCF17C262C987C0500DD829B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF17C252C987C0500DD829B /* HomeViewModel.swift */; };
+		FCF17C282C987C0F00DD829B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF17C272C987C0F00DD829B /* LoginViewModel.swift */; };
+		FCF17C2A2C987C1A00DD829B /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF17C292C987C1A00DD829B /* RegisterViewModel.swift */; };
+		FCF17C2E2C987CD400DD829B /* LocalizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF17C2D2C987CD400DD829B /* LocalizationService.swift */; };
+		FCF17C362C9883B300DD829B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FCF17C382C9883B300DD829B /* Localizable.strings */; };
+		FCF17C3C2C9884BD00DD829B /* String+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF17C3B2C9884BD00DD829B /* String+Ex.swift */; };
+		FCF17C3F2C98855100DD829B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FCF17C3E2C98855100DD829B /* SnapKit */; };
+		FCF17C422C9893C500DD829B /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF17C412C9893C500DD829B /* Router.swift */; };
+		FCF17C442C9893FB00DD829B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF17C432C9893FB00DD829B /* BaseViewController.swift */; };
+		FCF17C462C98A2E500DD829B /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF17C452C98A2E500DD829B /* InputTextField.swift */; };
+		FCF17C482C98C80900DD829B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCF17C472C98C80900DD829B /* GoogleService-Info.plist */; };
+		FCF17C4B2C98C8CD00DD829B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = FCF17C4A2C98C8CD00DD829B /* FirebaseFirestore */; };
+		FCF17C4E2C98CB0500DD829B /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF17C4D2C98CB0500DD829B /* UserService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FCF17C032C98766200DD829B /* EasyCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCF17C062C98766200DD829B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FCF17C082C98766200DD829B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FCF17C0A2C98766200DD829B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FCF17C0D2C98766200DD829B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FCF17C0F2C98766B00DD829B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FCF17C122C98766B00DD829B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FCF17C142C98766B00DD829B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCF17C1E2C987BDD00DD829B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		FCF17C202C987BE700DD829B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FCF17C222C987BF100DD829B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		FCF17C252C987C0500DD829B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		FCF17C272C987C0F00DD829B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		FCF17C292C987C1A00DD829B /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		FCF17C2D2C987CD400DD829B /* LocalizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationService.swift; sourceTree = "<group>"; };
+		FCF17C372C9883B300DD829B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FCF17C3B2C9884BD00DD829B /* String+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ex.swift"; sourceTree = "<group>"; };
+		FCF17C402C98873000DD829B /* az */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = az; path = az.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FCF17C412C9893C500DD829B /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		FCF17C432C9893FB00DD829B /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		FCF17C452C98A2E500DD829B /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
+		FCF17C472C98C80900DD829B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FCF17C4D2C98CB0500DD829B /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCF17C3F2C98855100DD829B /* SnapKit in Frameworks */,
+				FCF17C4B2C98C8CD00DD829B /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +85,99 @@
 		FCF17C052C98766200DD829B /* EasyCard */ = {
 			isa = PBXGroup;
 			children = (
+				FCF17C472C98C80900DD829B /* GoogleService-Info.plist */,
+				FCF17C3A2C9884AC00DD829B /* Utils */,
+				FCF17C2F2C987D0100DD829B /* Localization */,
+				FCF17C2B2C987C2800DD829B /* Services */,
+				FCF17C1A2C987B8B00DD829B /* Screens */,
 				FCF17C062C98766200DD829B /* AppDelegate.swift */,
-				FCF17C082C98766200DD829B /* SceneDelegate.swift */,
 				FCF17C0A2C98766200DD829B /* ViewController.swift */,
-				FCF17C0C2C98766200DD829B /* Main.storyboard */,
 				FCF17C0F2C98766B00DD829B /* Assets.xcassets */,
 				FCF17C112C98766B00DD829B /* LaunchScreen.storyboard */,
 				FCF17C142C98766B00DD829B /* Info.plist */,
+				FCF17C412C9893C500DD829B /* Router.swift */,
+				FCF17C432C9893FB00DD829B /* BaseViewController.swift */,
+				FCF17C452C98A2E500DD829B /* InputTextField.swift */,
 			);
 			path = EasyCard;
+			sourceTree = "<group>";
+		};
+		FCF17C1A2C987B8B00DD829B /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				FCF17C1D2C987BC000DD829B /* Home */,
+				FCF17C1C2C987BB800DD829B /* Login */,
+				FCF17C1B2C987B9D00DD829B /* Register */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		FCF17C1B2C987B9D00DD829B /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				FCF17C222C987BF100DD829B /* RegisterViewController.swift */,
+				FCF17C292C987C1A00DD829B /* RegisterViewModel.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		FCF17C1C2C987BB800DD829B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				FCF17C202C987BE700DD829B /* LoginViewController.swift */,
+				FCF17C272C987C0F00DD829B /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		FCF17C1D2C987BC000DD829B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FCF17C1E2C987BDD00DD829B /* HomeViewController.swift */,
+				FCF17C252C987C0500DD829B /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		FCF17C2B2C987C2800DD829B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FCF17C4C2C98CAF400DD829B /* UserService */,
+				FCF17C2C2C987C3700DD829B /* LocalizationService */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FCF17C2C2C987C3700DD829B /* LocalizationService */ = {
+			isa = PBXGroup;
+			children = (
+				FCF17C2D2C987CD400DD829B /* LocalizationService.swift */,
+			);
+			path = LocalizationService;
+			sourceTree = "<group>";
+		};
+		FCF17C2F2C987D0100DD829B /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				FCF17C382C9883B300DD829B /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		FCF17C3A2C9884AC00DD829B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FCF17C3B2C9884BD00DD829B /* String+Ex.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		FCF17C4C2C98CAF400DD829B /* UserService */ = {
+			isa = PBXGroup;
+			children = (
+				FCF17C4D2C98CB0500DD829B /* UserService.swift */,
+			);
+			path = UserService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +196,10 @@
 			dependencies = (
 			);
 			name = EasyCard;
+			packageProductDependencies = (
+				FCF17C3E2C98855100DD829B /* SnapKit */,
+				FCF17C4A2C98C8CD00DD829B /* FirebaseFirestore */,
+			);
 			productName = EasyCard;
 			productReference = FCF17C032C98766200DD829B /* EasyCard.app */;
 			productType = "com.apple.product-type.application";
@@ -109,8 +226,13 @@
 			knownRegions = (
 				en,
 				Base,
+				az,
 			);
 			mainGroup = FCF17BFA2C98766200DD829B;
+			packageReferences = (
+				FCF17C3D2C98855100DD829B /* XCRemoteSwiftPackageReference "SnapKit" */,
+				FCF17C492C98C8CD00DD829B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = FCF17C042C98766200DD829B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,8 +248,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCF17C132C98766B00DD829B /* LaunchScreen.storyboard in Resources */,
+				FCF17C482C98C80900DD829B /* GoogleService-Info.plist in Resources */,
+				FCF17C362C9883B300DD829B /* Localizable.strings in Resources */,
 				FCF17C102C98766B00DD829B /* Assets.xcassets in Resources */,
-				FCF17C0E2C98766200DD829B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,29 +261,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCF17C4E2C98CB0500DD829B /* UserService.swift in Sources */,
+				FCF17C422C9893C500DD829B /* Router.swift in Sources */,
+				FCF17C212C987BE700DD829B /* LoginViewController.swift in Sources */,
+				FCF17C3C2C9884BD00DD829B /* String+Ex.swift in Sources */,
+				FCF17C262C987C0500DD829B /* HomeViewModel.swift in Sources */,
+				FCF17C2E2C987CD400DD829B /* LocalizationService.swift in Sources */,
+				FCF17C442C9893FB00DD829B /* BaseViewController.swift in Sources */,
+				FCF17C232C987BF100DD829B /* RegisterViewController.swift in Sources */,
+				FCF17C2A2C987C1A00DD829B /* RegisterViewModel.swift in Sources */,
 				FCF17C0B2C98766200DD829B /* ViewController.swift in Sources */,
+				FCF17C462C98A2E500DD829B /* InputTextField.swift in Sources */,
 				FCF17C072C98766200DD829B /* AppDelegate.swift in Sources */,
-				FCF17C092C98766200DD829B /* SceneDelegate.swift in Sources */,
+				FCF17C1F2C987BDD00DD829B /* HomeViewController.swift in Sources */,
+				FCF17C282C987C0F00DD829B /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		FCF17C0C2C98766200DD829B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FCF17C0D2C98766200DD829B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FCF17C112C98766B00DD829B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				FCF17C122C98766B00DD829B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		FCF17C382C9883B300DD829B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCF17C372C9883B300DD829B /* en */,
+				FCF17C402C98873000DD829B /* az */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -170,6 +305,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -230,6 +366,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -292,7 +429,6 @@
 				INFOPLIST_FILE = EasyCard/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -320,7 +456,6 @@
 				INFOPLIST_FILE = EasyCard/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -358,6 +493,39 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FCF17C3D2C98855100DD829B /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+		FCF17C492C98C8CD00DD829B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = versionRange;
+				maximumVersion = 10.0.0;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FCF17C3E2C98855100DD829B /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FCF17C3D2C98855100DD829B /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		FCF17C4A2C98C8CD00DD829B /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FCF17C492C98C8CD00DD829B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FCF17BFB2C98766200DD829B /* Project object */;
 }

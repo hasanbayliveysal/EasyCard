@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  EasyCard
+
+  Created by Veysal Hasanbayli on 16.09.24.
+  
+*/
+"enterYourName" = "Adınızı daxil edin";
+"enterYourNumber" = "Nömrənizi daxil ddin";
+"selectYourBirthDate" = "Doğum tarixinizi seçin";
+"yourBirthDate" = "Sizin doğum tarixiniz : ";
+
+"register" = "Qeydiyyat";
