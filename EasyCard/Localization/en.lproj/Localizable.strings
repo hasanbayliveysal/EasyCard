@@ -5,9 +5,22 @@
   Created by Veysal Hasanbayli on 16.09.24.
   
 */
+"error" = "Error";
+"back" = "Back";
 "enterYourName" = "Enter your name";
 "enterYourNumber" = "Enter your number";
 "selectYourBirthDate" = "Select your birth date";
 "yourBirthDate" = "Your birth date : ";
 
 "register" = "Sign Up";
+"becomeAClient" = "Become a client of the bank";
+"changeLanguage" = "Change Language";
+"selectLanguage" = "Select Language";
+"cancel" = "Cancel";
+"fillBlanks" = "Fill Blanks";
+"carddetail" = "Card Details";
+"cardNumber" = "Card number";
+"usingDate" = "Date";
+
+"logout" = "Log Out";
+"doyouwantlogout" = "Do you want to log out?";

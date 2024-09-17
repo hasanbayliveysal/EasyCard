@@ -8,14 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		FCF17C072C98766200DD829B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF17C062C98766200DD829B /* AppDelegate.swift */; };
-		FCF17C0B2C98766200DD829B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF17C0A2C98766200DD829B /* ViewController.swift */; };
 		FCF17C102C98766B00DD829B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCF17C0F2C98766B00DD829B /* Assets.xcassets */; };
 		FCF17C132C98766B00DD829B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCF17C112C98766B00DD829B /* LaunchScreen.storyboard */; };
 		FCF17C1F2C987BDD00DD829B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF17C1E2C987BDD00DD829B /* HomeViewController.swift */; };
-		FCF17C212C987BE700DD829B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF17C202C987BE700DD829B /* LoginViewController.swift */; };
 		FCF17C232C987BF100DD829B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF17C222C987BF100DD829B /* RegisterViewController.swift */; };
 		FCF17C262C987C0500DD829B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF17C252C987C0500DD829B /* HomeViewModel.swift */; };
-		FCF17C282C987C0F00DD829B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF17C272C987C0F00DD829B /* LoginViewModel.swift */; };
 		FCF17C2A2C987C1A00DD829B /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF17C292C987C1A00DD829B /* RegisterViewModel.swift */; };
 		FCF17C2E2C987CD400DD829B /* LocalizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF17C2D2C987CD400DD829B /* LocalizationService.swift */; };
 		FCF17C362C9883B300DD829B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FCF17C382C9883B300DD829B /* Localizable.strings */; };
@@ -25,22 +22,25 @@
 		FCF17C442C9893FB00DD829B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF17C432C9893FB00DD829B /* BaseViewController.swift */; };
 		FCF17C462C98A2E500DD829B /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF17C452C98A2E500DD829B /* InputTextField.swift */; };
 		FCF17C482C98C80900DD829B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCF17C472C98C80900DD829B /* GoogleService-Info.plist */; };
-		FCF17C4B2C98C8CD00DD829B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = FCF17C4A2C98C8CD00DD829B /* FirebaseFirestore */; };
 		FCF17C4E2C98CB0500DD829B /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF17C4D2C98CB0500DD829B /* UserService.swift */; };
+		FCF17C512C995F5300DD829B /* URLSession+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF17C502C995F5300DD829B /* URLSession+Ex.swift */; };
+		FCF17C542C99692F00DD829B /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF17C532C99692F00DD829B /* KeychainHelper.swift */; };
+		FCF17C562C9974D300DD829B /* CardGeneratorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF17C552C9974D300DD829B /* CardGeneratorService.swift */; };
+		FCF17C592C997A9A00DD829B /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF17C582C997A9A00DD829B /* WelcomeViewController.swift */; };
+		FCF17C5C2C997AC100DD829B /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF17C5B2C997AC100DD829B /* WelcomeViewModel.swift */; };
+		FCF17C662C99A51A00DD829B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = FCF17C652C99A51A00DD829B /* FirebaseFirestore */; };
+		FCF17C682C99AEC500DD829B /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF17C672C99AEC500DD829B /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FCF17C032C98766200DD829B /* EasyCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCF17C062C98766200DD829B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FCF17C0A2C98766200DD829B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FCF17C0F2C98766B00DD829B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FCF17C122C98766B00DD829B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FCF17C142C98766B00DD829B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCF17C1E2C987BDD00DD829B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		FCF17C202C987BE700DD829B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FCF17C222C987BF100DD829B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		FCF17C252C987C0500DD829B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		FCF17C272C987C0F00DD829B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		FCF17C292C987C1A00DD829B /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		FCF17C2D2C987CD400DD829B /* LocalizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationService.swift; sourceTree = "<group>"; };
 		FCF17C372C9883B300DD829B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -51,6 +51,12 @@
 		FCF17C452C98A2E500DD829B /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
 		FCF17C472C98C80900DD829B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FCF17C4D2C98CB0500DD829B /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		FCF17C502C995F5300DD829B /* URLSession+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Ex.swift"; sourceTree = "<group>"; };
+		FCF17C532C99692F00DD829B /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
+		FCF17C552C9974D300DD829B /* CardGeneratorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGeneratorService.swift; sourceTree = "<group>"; };
+		FCF17C582C997A9A00DD829B /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		FCF17C5B2C997AC100DD829B /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
+		FCF17C672C99AEC500DD829B /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +65,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCF17C3F2C98855100DD829B /* SnapKit in Frameworks */,
-				FCF17C4B2C98C8CD00DD829B /* FirebaseFirestore in Frameworks */,
+				FCF17C662C99A51A00DD829B /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,19 +91,18 @@
 		FCF17C052C98766200DD829B /* EasyCard */ = {
 			isa = PBXGroup;
 			children = (
-				FCF17C472C98C80900DD829B /* GoogleService-Info.plist */,
-				FCF17C3A2C9884AC00DD829B /* Utils */,
+				FCF17C5E2C997B2300DD829B /* Base */,
+				FCF17C5D2C997B1B00DD829B /* Router */,
 				FCF17C2F2C987D0100DD829B /* Localization */,
 				FCF17C2B2C987C2800DD829B /* Services */,
+				FCF17C522C99691D00DD829B /* Helpers */,
+				FCF17C3A2C9884AC00DD829B /* Utils */,
 				FCF17C1A2C987B8B00DD829B /* Screens */,
-				FCF17C062C98766200DD829B /* AppDelegate.swift */,
-				FCF17C0A2C98766200DD829B /* ViewController.swift */,
+				FCF17C5F2C997B3100DD829B /* CustomUIElements */,
 				FCF17C0F2C98766B00DD829B /* Assets.xcassets */,
 				FCF17C112C98766B00DD829B /* LaunchScreen.storyboard */,
 				FCF17C142C98766B00DD829B /* Info.plist */,
-				FCF17C412C9893C500DD829B /* Router.swift */,
-				FCF17C432C9893FB00DD829B /* BaseViewController.swift */,
-				FCF17C452C98A2E500DD829B /* InputTextField.swift */,
+				FCF17C472C98C80900DD829B /* GoogleService-Info.plist */,
 			);
 			path = EasyCard;
 			sourceTree = "<group>";
@@ -105,9 +110,9 @@
 		FCF17C1A2C987B8B00DD829B /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				FCF17C1D2C987BC000DD829B /* Home */,
-				FCF17C1C2C987BB800DD829B /* Login */,
+				FCF17C5A2C997AB100DD829B /* Welcome */,
 				FCF17C1B2C987B9D00DD829B /* Register */,
+				FCF17C1D2C987BC000DD829B /* Home */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -121,20 +126,12 @@
 			path = Register;
 			sourceTree = "<group>";
 		};
-		FCF17C1C2C987BB800DD829B /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				FCF17C202C987BE700DD829B /* LoginViewController.swift */,
-				FCF17C272C987C0F00DD829B /* LoginViewModel.swift */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
 		FCF17C1D2C987BC000DD829B /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				FCF17C1E2C987BDD00DD829B /* HomeViewController.swift */,
 				FCF17C252C987C0500DD829B /* HomeViewModel.swift */,
+				FCF17C672C99AEC500DD829B /* CardView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -142,6 +139,7 @@
 		FCF17C2B2C987C2800DD829B /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				FCF17C572C9974D700DD829B /* CardGeneratorService */,
 				FCF17C4C2C98CAF400DD829B /* UserService */,
 				FCF17C2C2C987C3700DD829B /* LocalizationService */,
 			);
@@ -168,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				FCF17C3B2C9884BD00DD829B /* String+Ex.swift */,
+				FCF17C502C995F5300DD829B /* URLSession+Ex.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -178,6 +177,56 @@
 				FCF17C4D2C98CB0500DD829B /* UserService.swift */,
 			);
 			path = UserService;
+			sourceTree = "<group>";
+		};
+		FCF17C522C99691D00DD829B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FCF17C532C99692F00DD829B /* KeychainHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		FCF17C572C9974D700DD829B /* CardGeneratorService */ = {
+			isa = PBXGroup;
+			children = (
+				FCF17C552C9974D300DD829B /* CardGeneratorService.swift */,
+			);
+			path = CardGeneratorService;
+			sourceTree = "<group>";
+		};
+		FCF17C5A2C997AB100DD829B /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				FCF17C582C997A9A00DD829B /* WelcomeViewController.swift */,
+				FCF17C5B2C997AC100DD829B /* WelcomeViewModel.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		FCF17C5D2C997B1B00DD829B /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				FCF17C412C9893C500DD829B /* Router.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		FCF17C5E2C997B2300DD829B /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				FCF17C432C9893FB00DD829B /* BaseViewController.swift */,
+				FCF17C062C98766200DD829B /* AppDelegate.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		FCF17C5F2C997B3100DD829B /* CustomUIElements */ = {
+			isa = PBXGroup;
+			children = (
+				FCF17C452C98A2E500DD829B /* InputTextField.swift */,
+			);
+			path = CustomUIElements;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,7 +247,7 @@
 			name = EasyCard;
 			packageProductDependencies = (
 				FCF17C3E2C98855100DD829B /* SnapKit */,
-				FCF17C4A2C98C8CD00DD829B /* FirebaseFirestore */,
+				FCF17C652C99A51A00DD829B /* FirebaseFirestore */,
 			);
 			productName = EasyCard;
 			productReference = FCF17C032C98766200DD829B /* EasyCard.app */;
@@ -231,7 +280,7 @@
 			mainGroup = FCF17BFA2C98766200DD829B;
 			packageReferences = (
 				FCF17C3D2C98855100DD829B /* XCRemoteSwiftPackageReference "SnapKit" */,
-				FCF17C492C98C8CD00DD829B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				FCF17C642C99A51A00DD829B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = FCF17C042C98766200DD829B /* Products */;
 			projectDirPath = "";
@@ -263,18 +312,21 @@
 			files = (
 				FCF17C4E2C98CB0500DD829B /* UserService.swift in Sources */,
 				FCF17C422C9893C500DD829B /* Router.swift in Sources */,
-				FCF17C212C987BE700DD829B /* LoginViewController.swift in Sources */,
 				FCF17C3C2C9884BD00DD829B /* String+Ex.swift in Sources */,
 				FCF17C262C987C0500DD829B /* HomeViewModel.swift in Sources */,
 				FCF17C2E2C987CD400DD829B /* LocalizationService.swift in Sources */,
+				FCF17C562C9974D300DD829B /* CardGeneratorService.swift in Sources */,
 				FCF17C442C9893FB00DD829B /* BaseViewController.swift in Sources */,
 				FCF17C232C987BF100DD829B /* RegisterViewController.swift in Sources */,
+				FCF17C592C997A9A00DD829B /* WelcomeViewController.swift in Sources */,
 				FCF17C2A2C987C1A00DD829B /* RegisterViewModel.swift in Sources */,
-				FCF17C0B2C98766200DD829B /* ViewController.swift in Sources */,
 				FCF17C462C98A2E500DD829B /* InputTextField.swift in Sources */,
+				FCF17C542C99692F00DD829B /* KeychainHelper.swift in Sources */,
 				FCF17C072C98766200DD829B /* AppDelegate.swift in Sources */,
+				FCF17C5C2C997AC100DD829B /* WelcomeViewModel.swift in Sources */,
 				FCF17C1F2C987BDD00DD829B /* HomeViewController.swift in Sources */,
-				FCF17C282C987C0F00DD829B /* LoginViewModel.swift in Sources */,
+				FCF17C682C99AEC500DD829B /* CardView.swift in Sources */,
+				FCF17C512C995F5300DD829B /* URLSession+Ex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,13 +555,12 @@
 				minimumVersion = 5.0.1;
 			};
 		};
-		FCF17C492C98C8CD00DD829B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		FCF17C642C99A51A00DD829B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
-				kind = versionRange;
-				maximumVersion = 10.0.0;
-				minimumVersion = 7.0.0;
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -520,9 +571,9 @@
 			package = FCF17C3D2C98855100DD829B /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
-		FCF17C4A2C98C8CD00DD829B /* FirebaseFirestore */ = {
+		FCF17C652C99A51A00DD829B /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FCF17C492C98C8CD00DD829B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = FCF17C642C99A51A00DD829B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */

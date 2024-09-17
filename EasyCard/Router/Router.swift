@@ -9,7 +9,7 @@ import UIKit
 
 protocol RouterProtocol {
     
-    func loginVC () -> UIViewController
+    func welcomeVC () -> UIViewController
     func registerVC() -> UIViewController
     func homeVC () -> UIViewController
     
@@ -17,14 +17,15 @@ protocol RouterProtocol {
 
 class Router: RouterProtocol {
     
-    func loginVC() -> UIViewController {
-        return LoginViewController(vm: LoginViewModel(), router: self)
+    func welcomeVC() -> UIViewController {
+        return WelcomeViewController(vm: WelcomeViewModel(), router: self)
     }
+  
     func registerVC() -> UIViewController {
         return RegisterViewController(vm: RegisterViewModel(), router: self)
     }
     func homeVC() -> UIViewController {
         return HomeViewController(vm: HomeViewModel(), router: self)
     }
-    
+
 }

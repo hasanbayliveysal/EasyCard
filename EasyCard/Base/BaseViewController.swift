@@ -14,6 +14,22 @@ class BaseViewController<VM>: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(backgroundImageView)
+        backgroundImageView.snp.makeConstraints { make in
+            make.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(view.bounds.height/4)
+        }
+    }
+   
+    private let backgroundImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "launchLogo")
+        imageView.contentMode = .scaleAspectFit
+        imageView.alpha = 0.1
+        return imageView
+    }()
+    
+    override func viewWillAppear(_ animated: Bool) {
         let backButtonTitle = "back".localized()
         let backBarButtonItem = UIBarButtonItem(title: backButtonTitle, style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backBarButtonItem

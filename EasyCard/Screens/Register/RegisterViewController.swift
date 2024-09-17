@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 final class RegisterViewController: BaseViewController<RegisterViewModel> {
     
@@ -27,7 +28,7 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
     private let numberTextField: InputTextField = {
         let tf = InputTextField()
         tf.keyboardType = .numberPad
-        tf.placeholder = "enterYourNumber".localized()
+        tf.placeholder = "\("enterYourNumber".localized()) ( 0551234567 )"
         return tf
     }()
     
@@ -46,34 +47,41 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
     
     private lazy var registerButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .systemBlue
+        button.backgroundColor = UIColor(named: "buttonBackground")
         button.addTarget(self, action: #selector(didTapRegister), for: .touchUpInside)
-        button.layer.cornerRadius = 12
+        button.layer.cornerRadius = 20
         button.layer.borderColor = UIColor.white.cgColor
         button.layer.borderWidth = 0.5
         button.setTitle("register".localized(), for: .normal)
+        button.setTitleColor(.black, for: .normal)
         return button
     }()
     
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: .large)
+        indicator.hidesWhenStopped = true
+        indicator.color = .gray
+        return indicator
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(named: "backgroundColor")
         setupUI()
     }
     
     private func setupUI() {
         addGestureRecognizer()
-        view.backgroundColor = .cyan.withAlphaComponent(0.15)
-        [mainStackView].forEach({view.addSubview($0)})
+        [mainStackView, activityIndicator].forEach { view.addSubview($0) }
         dateTextField.addSubview(datePicker)
-        [nameTextField, numberTextField, dateTextField, registerButton].forEach({mainStackView.addArrangedSubview($0)})
+        [nameTextField, numberTextField, dateTextField, registerButton].forEach { mainStackView.addArrangedSubview($0) }
         setupConstraints()
         mainStackView.setCustomSpacing(32, after: dateTextField)
     }
     
     private func setupConstraints() {
         mainStackView.snp.makeConstraints { make in
-            make.center.equalTo(view.snp.center)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(30)
             make.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(20)
         }
         
@@ -86,15 +94,15 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
             make.height.equalTo(48)
         }
         
+        activityIndicator.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+        }
     }
 }
 
 extension RegisterViewController {
     
-    @objc
-    private func doneButtonTapped() {
-        print("ok")
-    }
+   
     
     @objc
     private func didSelectDate() {
@@ -111,12 +119,21 @@ extension RegisterViewController {
               let number = numberTextField.text, !number.isEmpty,
               selectedDate != ""
         else {
-            showAlert("Error", "Fill blanks")
+            showAlert("error", "fillBlanks")
             return
         }
+        activityIndicator.startAnimating()
+        
         Task {
             do {
                 try await vm.saveUserData(User(id: UUID().uuidString, name: name, number: number, birthDate: selectedDate))
+                activityIndicator.stopAnimating()
+                let vc = UINavigationController(rootViewController: router.homeVC())
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true)
+            } catch {
+                activityIndicator.stopAnimating()
+                showAlert("error", error.localizedDescription)
             }
         }
     }
@@ -130,6 +147,4 @@ extension RegisterViewController {
     private func didTapView() {
         view.endEditing(true)
     }
-    
 }
-

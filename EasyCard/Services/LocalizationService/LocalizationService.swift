@@ -8,7 +8,7 @@
 import UIKit
 
 protocol LocalizationServiceProtocol {
-    func changeLanguage(_ language: String)
+    func changeLanguage(_ language: Language)
     func getLanguage() -> String
 }
 
@@ -19,9 +19,9 @@ final class LocalizationService: LocalizationServiceProtocol {
     static let userApplicationLanguageKey = "UserApplicationLanguageKey"
     static var currentLanguage = Language.en.rawValue
     
-    func changeLanguage(_ language: String) {
-        LocalizationService.currentLanguage = language
-        UserDefaults.standard.setValue(language, forKey: LocalizationService.userApplicationLanguageKey)
+    func changeLanguage(_ language: Language) {
+        LocalizationService.currentLanguage = language.rawValue
+        UserDefaults.standard.setValue(language.rawValue, forKey: LocalizationService.userApplicationLanguageKey)
     }
     
     @discardableResult

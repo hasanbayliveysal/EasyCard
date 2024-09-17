@@ -33,6 +33,8 @@ class InputTextField: UITextField {
     }
     
     private func setup() {
+        layer.borderWidth = 2
+        layer.borderColor = UIColor(named: "buttonBackground")?.cgColor
         backgroundColor = .systemGray6
         layer.cornerRadius = 10
         autocorrectionType = .no
