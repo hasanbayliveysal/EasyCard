@@ -86,8 +86,7 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
         }
         
         datePicker.snp.makeConstraints { make in
-            make.center.equalToSuperview()
-            make.leading.equalToSuperview().offset(8)
+            make.edges.equalToSuperview()
         }
         
         registerButton.snp.makeConstraints { make in

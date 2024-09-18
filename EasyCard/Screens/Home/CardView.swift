@@ -67,7 +67,7 @@ final class CardFrontView: UIView {
         numberLabel.text = "• \(lastFourDigits)"
         print(card.type)
         cardLogo.image = UIImage(named: (card.type == "Visa") ? "visa" : "mastercard")
-        containerView.backgroundColor = UIColor(named: (card.type == "Visa") ? "buttonBackground" : "mastercardColor")
+        containerView.backgroundColor = UIColor(named: (card.type == "Visa") ? "visaColor" : "mastercardColor")
         setupConstraints()
     }
     
@@ -172,7 +172,7 @@ final class CardBackView: UIView {
     func configure(with card: Card) {
         numberStackView.configure(with: "cardNumber", and: card.cardNumber)
         dateStackView.configure(with: "usingDate", and: convertDate(dateString: card.date))
-        containerView.backgroundColor = UIColor(named: (card.type == "Visa") ? "buttonBackground" : "mastercardColor")
+        containerView.backgroundColor = UIColor(named: (card.type == "Visa") ? "visaColor" : "mastercardColor")
         cvvCode = " \(card.cvv)"
         setupConstraints()
     }

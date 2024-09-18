@@ -28,3 +28,7 @@
 "yourbalance" = "Sizin balansınız";
 "transactions" = "Köçürmələr";
 "deletecard" = "Kartı silin";
+"send" = "Göndər";
+"doyouwanttodelete" = "Kartı silmək istədiyinizdən əminsiniz?";
+"selectcardtype" = "Kart növünü seçin";
+"selectcardtypeyouwant" = "Sifariş vermək istədiniz kart növünü seçin";

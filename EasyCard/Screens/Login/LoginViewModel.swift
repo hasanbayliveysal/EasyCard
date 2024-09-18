@@ -2,11 +2,11 @@
 //  LoginViewModel.swift
 //  EasyCard
 //
-//  Created by Veysal Hasanbayli on 16.09.24.
+//  Created by Veysal Hasanbayli on 18.09.24.
 //
 
 import UIKit
 
-class LoginViewModel {
+final class LoginViewModel {
     
 }

@@ -15,8 +15,16 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         let label = UILabel()
         label.textColor = .white
         label.text = "welcome".localized()
-        label.font = .systemFont(ofSize: 20, weight: .bold)
+        label.font = .systemFont(ofSize: 18, weight: .bold)
         return label
+    }()
+    
+    private lazy var reloadButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "gobackward"), for: .normal)
+        button.tintColor = .white
+        button.addTarget(self, action: #selector(didTapReloadButton), for: .touchUpInside)
+        return button
     }()
     
     private lazy var rightBarButton: UIButton = {
@@ -24,6 +32,13 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         button.setImage(UIImage(named: "rightBarButton"), for: .normal)
         button.addTarget(self, action: #selector(didTapMoreButton), for: .touchUpInside)
         return button
+    }()
+    
+    private let topStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.spacing = 4
+        return stackView
     }()
     
     private let mainStackView: UIStackView = {
@@ -81,6 +96,7 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
     private let activityIndicator: UIActivityIndicatorView = {
         let activityIndicator = UIActivityIndicatorView(style: .large)
         activityIndicator.hidesWhenStopped = true
+        activityIndicator.color = .white
         return activityIndicator
     }()
     
@@ -99,6 +115,7 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
     }
     
     private func setupConstraints() {
+        [reloadButton, rightBarButton].forEach({topStackView.addArrangedSubview($0)})
         containerView.addSubview(cardFrontView)
         containerView.addSubview(cardBackView)
         view.addSubview(blurEffectView)
@@ -132,29 +149,35 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         activityIndicator.snp.makeConstraints { make in
             make.center.equalToSuperview()
         }
-        
-       
+
     }
     
     private func buttonActions() {
-        emptyView.plusButtonClicked = {[weak self] in
-            self?.blurEffectView.isHidden = false
-            self?.activityIndicator.startAnimating()
-            Task {
-                do {
-                    try await self?.vm.generateCard(with: .VISA)
-                    self?.reloadAllViewElements()
+        emptyView.plusButtonClicked = {
+            self.blurEffectView.isHidden = false
+            self.activityIndicator.startAnimating()
+            self.present(self.vm.showAlertForSelection(), animated: true)
+            self.vm.selectedCardType = { [weak self] cardType in
+                Task {
+                    do {
+                        try await self?.vm.generateCard(with: cardType)
+                        self?.reloadAllViewElements()
+                    }
                 }
             }
+            
         }
         
-        cardActionsView.deleteButtonClicked = { [weak self] in
-            self?.activityIndicator.startAnimating()
-            self?.blurEffectView.isHidden = false
-           
-            Task {
-                do {
-                    try await self?.vm.deleteCard()
+        vm.cancelButtonClicked = { [weak self] in
+            self?.reloadAllViewElements()
+        }
+        
+        cardActionsView.deleteButtonClicked = {
+            self.activityIndicator.startAnimating()
+            self.blurEffectView.isHidden = false
+            self.present(self.vm.showAlertForDeleteCard(), animated: true)
+            self.vm.reloadData = { [weak self] in
+                DispatchQueue.main.async {
                     self?.reloadAllViewElements()
                 }
             }
@@ -165,8 +188,6 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
             self?.navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
         }
     }
-    
-    
     
     private func setupActivityIndicator() {
         blurEffectView.isHidden = true
@@ -202,11 +223,9 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         cardFrontView.isHidden = true
         cardBackView.isHidden = true
         
-        // Reload data
         loadData()
-        
-        // Hide blur effect and activity indicator after data is reloaded
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { // Adjust delay as needed
+       
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             self.activityIndicator.stopAnimating()
             self.blurEffectView.isHidden = true
         }
@@ -231,8 +250,11 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         alert.addAction(UIAlertAction(title: "cancel".localized(), style: .destructive))
         self.present(alert, animated: true)
         
-        
-        
+    }
+    
+    @objc
+    private func didTapReloadButton() {
+        reloadAllViewElements()
     }
     
     private func flipCard() {
@@ -246,7 +268,7 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
     private func createLeftAndRightBarButton() {
         let leftBarButtonItem = UIBarButtonItem(customView: leftTitleView)
         navigationItem.leftBarButtonItem = leftBarButtonItem
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBarButton)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: topStackView)
     }
     
     private func addGestureRecognizer() {

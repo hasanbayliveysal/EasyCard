@@ -37,10 +37,10 @@ class WelcomeViewController: BaseViewController<WelcomeViewModel> {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "backgroundColor")
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBarButton)
-        setupConstrains()
+        setupConstraints()
     }
     
-    private func setupConstrains() {
+    private func setupConstraints() {
         view.addSubview(backgroundImageView)
         view.addSubview(signUpButton)
         signUpButton.snp.makeConstraints { make in

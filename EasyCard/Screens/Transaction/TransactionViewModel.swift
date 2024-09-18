@@ -9,6 +9,7 @@ import UIKit
 
 final class TransactionViewModel: NSObject {
     var reloadTableView: emptyClosure?
+    var selectedCard: ((Card) -> ())?
     var cards: [Card] = [] {
         didSet {
             reloadTableView?()
@@ -55,7 +56,7 @@ extension TransactionViewModel: UITableViewDataSource {
 extension TransactionViewModel: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        sendMoney(with: cards[indexPath.row])
+        selectedCard?(cards[indexPath.row])
     }
     
 }

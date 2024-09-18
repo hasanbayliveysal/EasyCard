@@ -11,7 +11,7 @@ final class LeftImageTitleSubtitleCell: UITableViewCell {
     
     private let containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(named: "mastercardColor")
+        view.backgroundColor = UIColor(named: "transactionColor")
         view.layer.cornerRadius = 6
         return view
     }()
@@ -33,11 +33,13 @@ final class LeftImageTitleSubtitleCell: UITableViewCell {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
+        label.textColor = .white
         return label
     }()
     
     private let subtitleLabel: UILabel = {
         let label = UILabel()
+        label.textColor = .white
         return label
     }()
     

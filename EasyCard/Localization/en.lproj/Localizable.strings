@@ -29,3 +29,8 @@
 "yourbalance" = "Your balance";
 "transactions" = "Transactions";
 "deletecard" = "Delete Card";
+"send" = "Send";
+"doyouwanttodelete" = "Do you want to delete a card?";
+"selectcardtype" = "Select card type";
+"selectcardtypeyouwant" = "Select the type of card you want to order";
+

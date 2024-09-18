@@ -13,7 +13,7 @@ protocol RouterProtocol {
     func registerVC() -> UIViewController
     func homeVC () -> UIViewController
     func transactionVC() -> UIViewController
-    
+    func transferVC() -> UIViewController
 }
 
 class Router: RouterProtocol {
@@ -34,4 +34,8 @@ class Router: RouterProtocol {
         return TransactionViewController(vm: TransactionViewModel(), router: self)
     }
 
+    func transferVC() -> UIViewController {
+        TransferViewController(vm: TransferViewModel(), router: self)
+    }
+    
 }

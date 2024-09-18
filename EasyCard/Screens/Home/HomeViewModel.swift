@@ -8,6 +8,9 @@
 import UIKit
 
 final class HomeViewModel {
+    var reloadData: emptyClosure?
+    var selectedCardType: ((CardType) -> (Void))?
+    var cancelButtonClicked: emptyClosure?
     
     func getCurrentUserID() -> String {
         return UserService.shared.getCurrentUserID()
@@ -38,6 +41,42 @@ final class HomeViewModel {
         UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
     }
     
+    func showAlertForDeleteCard() -> UIAlertController {
+        let alert = UIAlertController(title: "deletecard".localized(), message: "doyouwanttodelete".localized(), preferredStyle: .alert)
+        let okButton = UIAlertAction(title: "OK", style: .default) {  _ in
+             Task {
+                 do {
+                     try await self.deleteCard()
+                     self.reloadData?()
+                 }
+             }
+        }
+        let cancelButton = UIAlertAction(title: "cancel".localized(), style: .destructive) {  [self] _ in
+            cancelButtonClicked?()
+        }
+        alert.addAction(okButton)
+        alert.addAction(cancelButton)
+        return alert
+    }
+    
+    func showAlertForSelection() -> UIAlertController {
+        let alert = UIAlertController(title: "selectcardtype".localized(), message: "selectcardtypeyouwant".localized(), preferredStyle: .alert)
+        let visaButton = UIAlertAction(title: "VISA", style: .default) { [self] _ in
+            selectedCardType?(.VISA)
+        }
+        
+        let mastedcardButton = UIAlertAction(title: "MASTERCARD", style: .default) {  [self] _ in
+            selectedCardType?(.MASTERCARD)
+        }
+        let cancelButton = UIAlertAction(title: "cancel".localized(), style: .destructive) {  [self] _ in
+            cancelButtonClicked?()
+        }
+        
+        alert.addAction(visaButton)
+        alert.addAction(mastedcardButton)
+        alert.addAction(cancelButton)
+        return alert
+    }
     
 }
 
