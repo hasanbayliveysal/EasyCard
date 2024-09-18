@@ -7,8 +7,8 @@
 
 import UIKit
 
-class EmptyView: UIView {
-    var plusButtonClicked: (()->Void)?
+final class EmptyView: UIView {
+    var plusButtonClicked: emptyClosure?
     private lazy var plusButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "plus.circle"), for: .normal)

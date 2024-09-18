@@ -7,7 +7,7 @@
 
 import Foundation
 
-class WelcomeViewModel {
+final class WelcomeViewModel {
     func changeLanguage(_ language: Language) {
         LocalizationService.shared.changeLanguage(language)
     }

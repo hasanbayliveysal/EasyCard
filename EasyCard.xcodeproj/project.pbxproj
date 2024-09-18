@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC549EB72C9AEFB700C11EEC /* CardActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC549EB62C9AEFB700C11EEC /* CardActionsView.swift */; };
+		FC549EBA2C9AF9D400C11EEC /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC549EB92C9AF9D400C11EEC /* TransactionViewController.swift */; };
+		FC549EBC2C9AF9E200C11EEC /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC549EBB2C9AF9E200C11EEC /* TransactionViewModel.swift */; };
+		FC549EBE2C9AFB6700C11EEC /* UITableViewCell+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC549EBD2C9AFB6700C11EEC /* UITableViewCell+Ex.swift */; };
+		FC549EC02C9AFC1700C11EEC /* LeftImageTitleSubtitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC549EBF2C9AFC1700C11EEC /* LeftImageTitleSubtitleCell.swift */; };
+		FC549EC32C9B0A0600C11EEC /* TransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC549EC22C9B0A0600C11EEC /* TransactionService.swift */; };
 		FCF17C072C98766200DD829B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF17C062C98766200DD829B /* AppDelegate.swift */; };
 		FCF17C102C98766B00DD829B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCF17C0F2C98766B00DD829B /* Assets.xcassets */; };
 		FCF17C132C98766B00DD829B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCF17C112C98766B00DD829B /* LaunchScreen.storyboard */; };
@@ -34,6 +40,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FC549EB62C9AEFB700C11EEC /* CardActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardActionsView.swift; sourceTree = "<group>"; };
+		FC549EB92C9AF9D400C11EEC /* TransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
+		FC549EBB2C9AF9E200C11EEC /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModel.swift; sourceTree = "<group>"; };
+		FC549EBD2C9AFB6700C11EEC /* UITableViewCell+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Ex.swift"; sourceTree = "<group>"; };
+		FC549EBF2C9AFC1700C11EEC /* LeftImageTitleSubtitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftImageTitleSubtitleCell.swift; sourceTree = "<group>"; };
+		FC549EC22C9B0A0600C11EEC /* TransactionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionService.swift; sourceTree = "<group>"; };
 		FCF17C032C98766200DD829B /* EasyCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCF17C062C98766200DD829B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCF17C0F2C98766B00DD829B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -74,6 +86,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC549EB82C9AF9B600C11EEC /* Transaction */ = {
+			isa = PBXGroup;
+			children = (
+				FC549EB92C9AF9D400C11EEC /* TransactionViewController.swift */,
+				FC549EBB2C9AF9E200C11EEC /* TransactionViewModel.swift */,
+				FC549EBF2C9AFC1700C11EEC /* LeftImageTitleSubtitleCell.swift */,
+			);
+			path = Transaction;
+			sourceTree = "<group>";
+		};
+		FC549EC12C9B09E600C11EEC /* TransactionService */ = {
+			isa = PBXGroup;
+			children = (
+				FC549EC22C9B0A0600C11EEC /* TransactionService.swift */,
+			);
+			path = TransactionService;
+			sourceTree = "<group>";
+		};
 		FCF17BFA2C98766200DD829B = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +145,7 @@
 				FCF17C5A2C997AB100DD829B /* Welcome */,
 				FCF17C1B2C987B9D00DD829B /* Register */,
 				FCF17C1D2C987BC000DD829B /* Home */,
+				FC549EB82C9AF9B600C11EEC /* Transaction */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -135,6 +166,7 @@
 				FCF17C252C987C0500DD829B /* HomeViewModel.swift */,
 				FCF17C672C99AEC500DD829B /* CardView.swift */,
 				FCFF0D382C9AAB1A007C83D9 /* EmptyView.swift */,
+				FC549EB62C9AEFB700C11EEC /* CardActionsView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -142,6 +174,7 @@
 		FCF17C2B2C987C2800DD829B /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				FC549EC12C9B09E600C11EEC /* TransactionService */,
 				FCF17C572C9974D700DD829B /* CardGeneratorService */,
 				FCF17C4C2C98CAF400DD829B /* UserService */,
 				FCF17C2C2C987C3700DD829B /* LocalizationService */,
@@ -170,6 +203,7 @@
 			children = (
 				FCF17C3B2C9884BD00DD829B /* String+Ex.swift */,
 				FCF17C502C995F5300DD829B /* URLSession+Ex.swift */,
+				FC549EBD2C9AFB6700C11EEC /* UITableViewCell+Ex.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -313,6 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC549EBE2C9AFB6700C11EEC /* UITableViewCell+Ex.swift in Sources */,
 				FCF17C4E2C98CB0500DD829B /* UserService.swift in Sources */,
 				FCF17C422C9893C500DD829B /* Router.swift in Sources */,
 				FCF17C3C2C9884BD00DD829B /* String+Ex.swift in Sources */,
@@ -320,6 +355,8 @@
 				FCF17C2E2C987CD400DD829B /* LocalizationService.swift in Sources */,
 				FCF17C562C9974D300DD829B /* CardGeneratorService.swift in Sources */,
 				FCF17C442C9893FB00DD829B /* BaseViewController.swift in Sources */,
+				FC549EB72C9AEFB700C11EEC /* CardActionsView.swift in Sources */,
+				FC549EC02C9AFC1700C11EEC /* LeftImageTitleSubtitleCell.swift in Sources */,
 				FCF17C232C987BF100DD829B /* RegisterViewController.swift in Sources */,
 				FCF17C592C997A9A00DD829B /* WelcomeViewController.swift in Sources */,
 				FCF17C2A2C987C1A00DD829B /* RegisterViewModel.swift in Sources */,
@@ -327,10 +364,13 @@
 				FCF17C462C98A2E500DD829B /* InputTextField.swift in Sources */,
 				FCF17C542C99692F00DD829B /* KeychainHelper.swift in Sources */,
 				FCF17C072C98766200DD829B /* AppDelegate.swift in Sources */,
+				FC549EBA2C9AF9D400C11EEC /* TransactionViewController.swift in Sources */,
+				FC549EC32C9B0A0600C11EEC /* TransactionService.swift in Sources */,
 				FCF17C5C2C997AC100DD829B /* WelcomeViewModel.swift in Sources */,
 				FCF17C1F2C987BDD00DD829B /* HomeViewController.swift in Sources */,
 				FCF17C682C99AEC500DD829B /* CardView.swift in Sources */,
 				FCF17C512C995F5300DD829B /* URLSession+Ex.swift in Sources */,
+				FC549EBC2C9AF9E200C11EEC /* TransactionViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

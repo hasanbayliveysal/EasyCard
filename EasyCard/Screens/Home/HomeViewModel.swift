@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewModel {
+final class HomeViewModel {
     
     func getCurrentUserID() -> String {
         return UserService.shared.getCurrentUserID()

@@ -30,7 +30,7 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.distribution = .fillProportionally
-        stackView.spacing = 20
+        stackView.spacing = 30
         return stackView
     }()
     
@@ -65,6 +65,12 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         return label
     }()
     
+    private let cardActionsView: CardActionsView = {
+        let view = CardActionsView()
+        view.isHidden = true
+        return view
+    }()
+    
     private let blurEffectView: UIVisualEffectView = {
         let blurEffect = UIBlurEffect(style: .dark)
         let blurView = UIVisualEffectView(effect: blurEffect)
@@ -78,10 +84,15 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         return activityIndicator
     }()
     
+    override func viewWillAppear(_ animated: Bool) {
+        loadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         createLeftAndRightBarButton()
         view.backgroundColor = UIColor(named: "backgroundColor")
+        buttonActions()
         setupConstraints()
         setupActivityIndicator()
         addGestureRecognizer()
@@ -92,7 +103,7 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         containerView.addSubview(cardBackView)
         view.addSubview(blurEffectView)
         blurEffectView.contentView.addSubview(activityIndicator)
-        [emptyView, containerView, balanceLabel].forEach({ mainStackView.addArrangedSubview($0) })
+        [emptyView, containerView, balanceLabel, cardActionsView].forEach({ mainStackView.addArrangedSubview($0) })
         view.addSubview(mainStackView)
         
         mainStackView.snp.makeConstraints { make in
@@ -122,19 +133,40 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
             make.center.equalToSuperview()
         }
         
-        emptyView.plusButtonClicked = {
-            self.blurEffectView.isHidden = false
-            self.activityIndicator.startAnimating()
+       
+    }
+    
+    private func buttonActions() {
+        emptyView.plusButtonClicked = {[weak self] in
+            self?.blurEffectView.isHidden = false
+            self?.activityIndicator.startAnimating()
             Task {
                 do {
-                    try await self.vm.generateCard(with: .MASTERCARD)
-                    self.reloadAllViewElements()
+                    try await self?.vm.generateCard(with: .VISA)
+                    self?.reloadAllViewElements()
                 }
             }
-            
         }
-        loadData()
+        
+        cardActionsView.deleteButtonClicked = { [weak self] in
+            self?.activityIndicator.startAnimating()
+            self?.blurEffectView.isHidden = false
+           
+            Task {
+                do {
+                    try await self?.vm.deleteCard()
+                    self?.reloadAllViewElements()
+                }
+            }
+        }
+        
+        cardActionsView.transactionButtonClicked = { [weak self] in
+            let vc = self?.router.transactionVC()
+            self?.navigationController?.pushViewController(vc ?? UIViewController(), animated: true)
+        }
     }
+    
+    
     
     private func setupActivityIndicator() {
         blurEffectView.isHidden = true
@@ -148,9 +180,12 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
                     emptyView.isHidden = false
                     print("here empty view")
                     emptyView.configure(with: user.name)
+                    cardActionsView.isHidden = true
+                    balanceLabel.isHidden = true
                     return
                 }
-                
+                cardActionsView.isHidden = false
+                balanceLabel.isHidden = false
                 let card = try await vm.fetchUserCard(with: cardID)
                 cardFrontView.configure(with: card)
                 cardBackView.configure(with: card)
@@ -163,8 +198,6 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
     }
     
     private func reloadAllViewElements() {
-        // Show blur effect and activity indicator
-        // Reset views to their initial states
         emptyView.isHidden = true
         cardFrontView.isHidden = true
         cardBackView.isHidden = true
@@ -181,7 +214,7 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
     
     @objc
     private func handleTapGesture() {
-            flipCard()
+        flipCard()
     }
     
     @objc
@@ -198,15 +231,7 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         alert.addAction(UIAlertAction(title: "cancel".localized(), style: .destructive))
         self.present(alert, animated: true)
         
-        //        blurEffectView.isHidden = false
-        //        activityIndicator.startAnimating()
-        //
-        //        Task {
-        //            do {
-        //                try await vm.deleteCard()
-        //                reloadAllViewElements()
-        //            }
-        //        }
+        
         
     }
     

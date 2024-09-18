@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RegisterViewModel {
+final class RegisterViewModel {
     func saveUserData(_ user: User) async throws {
         try await UserService.shared.saveUserData(with: user)
         saveCurrentUserID(user.id)

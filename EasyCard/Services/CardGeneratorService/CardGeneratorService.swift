@@ -12,7 +12,8 @@ protocol CardGeneratorProtocol {
     func generateCard(with url: String, and cardType: CardType) async throws
     func uploadCard(with cardData: Card) async throws
     func fetchCardByID(with cardID: String) async throws -> Card
-    func deleteCard() async throws 
+    func fetchAllCards() async throws -> [Card]
+    func deleteCard() async throws
 }
 
 class CardGenerator: CardGeneratorProtocol {
@@ -24,7 +25,7 @@ class CardGenerator: CardGeneratorProtocol {
         let cardResponse: CardResponse = try await URLSession.shared.fetch(url: "\(url)\(cardType.rawValue)")
         let cardData = Card(id: UUID().uuidString, type: cardResponse.type, ownerID: getCurrentUserID(), cardNumber: cardResponse.cardNumber, cvv: cardResponse.cvv, balance: 10.0, date: cardResponse.date)
         try await uploadCard(with: cardData)
-      
+        
     }
     
     func uploadCard(with cardData: Card) async throws {
@@ -70,10 +71,29 @@ class CardGenerator: CardGeneratorProtocol {
               let cvv = data?["cvv"] as? String,
               let balance = data?["balance"] as? Double,
               let date = data?["date"] as? String
-              else {
-           throw NSError(domain: "Parsing error", code: -1)
+        else {
+            throw NSError(domain: "Parsing error", code: -1)
         }
         return Card(id: id, type: type, ownerID: ownerID, cardNumber: cardNumber, cvv: cvv, balance: balance, date: date)
+    }
+    
+    func fetchAllCards() async throws -> [Card] {
+        let snapshot = try await db.collection("cards").getDocuments()
+        let allCards: [Card] = snapshot.documents.compactMap { document in
+            let data = document.data()
+            guard let id = data["id"] as? String,
+                  let type = data["type"] as? String,
+                  let ownerID = data["ownerID"] as? String,
+                  let cardNumber = data["cardNumber"] as? String,
+                  let cvv = data["cvv"] as? String,
+                  let balance = data["balance"] as? Double,
+                  let date = data["date"] as? String else {
+                return nil
+            }
+            return Card(id: id, type: type, ownerID: ownerID, cardNumber: cardNumber, cvv: cvv, balance: balance, date: date)
+        }
+        
+        return allCards.filter { $0.ownerID != getCurrentUserID() }
     }
     
     func getCurrentUserID() -> String {

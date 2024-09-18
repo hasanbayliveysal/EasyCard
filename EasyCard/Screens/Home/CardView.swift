@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CardFrontView: UIView {
+final class CardFrontView: UIView {
     
     private let containerView: UIView = {
         let view = UIView()
@@ -74,7 +74,7 @@ class CardFrontView: UIView {
 }
 
 
-class CardBackView: UIView {
+final class CardBackView: UIView {
     
     private var isShown = false
     private var cvvCode: String?

@@ -27,3 +27,5 @@
 "youdonthave" = "You don't have a card, click 'plus' button to order a card";
 "welcome" = "Welcome to EASYCARD";
 "yourbalance" = "Your balance";
+"transactions" = "Transactions";
+"deletecard" = "Delete Card";
