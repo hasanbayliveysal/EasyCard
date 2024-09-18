@@ -23,3 +23,6 @@
 "usingDate" = "İstifadə tarixi";
 "logout" = "Çıxış";
 "doyouwantlogout" = "Çıxmaq istədiyinizdən əminsiniz";
+"youdonthave" = "Sizin kartınız yoxdur, sifariş vermək üçün 'plus' düyməsinə toxunun";
+"welcome" = "EASYCARD-a xoş gəlmişsiniz";
+"yourbalance" = "Sizin balansınız";

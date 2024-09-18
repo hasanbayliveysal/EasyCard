@@ -35,14 +35,14 @@ class CardFrontView: UIView {
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        setupConstraints()
-    }
-    
-    private func setupConstraints() {
         addSubview(containerView)
         containerView.addSubview(numberLabel)
         containerView.addSubview(cardLogo)
         containerView.addSubview(detailLabel)
+    }
+    
+    private func setupConstraints() {
+      
         containerView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
@@ -63,11 +63,12 @@ class CardFrontView: UIView {
     }
     
     func configure(with card: Card) {
-        let lastFourDigits = String(card.code.suffix(4))
+        let lastFourDigits = String(card.cardNumber.suffix(4))
         numberLabel.text = "• \(lastFourDigits)"
         print(card.type)
         cardLogo.image = UIImage(named: (card.type == "Visa") ? "visa" : "mastercard")
         containerView.backgroundColor = UIColor(named: (card.type == "Visa") ? "buttonBackground" : "mastercardColor")
+        setupConstraints()
     }
     
 }
@@ -129,10 +130,6 @@ class CardBackView: UIView {
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        setupConstraints()
-    }
-    
-    private func setupConstraints() {
         addSubview(containerView)
         containerView.addSubview(viewForCVV)
         containerView.addSubview(numberStackView)
@@ -141,6 +138,10 @@ class CardBackView: UIView {
         [cvvLabel, eyeButton].forEach({
             viewForCVV.addArrangedSubview($0)
         })
+    }
+    
+    private func setupConstraints() {
+     
         containerView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
@@ -169,10 +170,11 @@ class CardBackView: UIView {
     }
     
     func configure(with card: Card) {
-        numberStackView.configure(with: "cardNumber", and: card.code)
+        numberStackView.configure(with: "cardNumber", and: card.cardNumber)
         dateStackView.configure(with: "usingDate", and: convertDate(dateString: card.date))
         containerView.backgroundColor = UIColor(named: (card.type == "Visa") ? "buttonBackground" : "mastercardColor")
         cvvCode = " \(card.cvv)"
+        setupConstraints()
     }
     
     private func convertDate(dateString: String) -> String {
@@ -202,7 +204,6 @@ class TitleSubtitleStackView: UIStackView {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black.withAlphaComponent(0.5)
-        label.text = "sadfgsadf"
         label.font = .systemFont(ofSize: 12, weight: .regular)
         return label
     }()
@@ -210,7 +211,6 @@ class TitleSubtitleStackView: UIStackView {
     private let subtitleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.text = "sadfgsadf"
         label.font = .systemFont(ofSize: 20, weight: .medium)
         return label
     }()
@@ -219,7 +219,6 @@ class TitleSubtitleStackView: UIStackView {
         super.init(frame: frame)
         axis = .vertical
         spacing = 4
-        print("dsadkjlsfjas")
         alignment = .leading
         [titleLabel, subtitleLabel].forEach({
             addArrangedSubview($0)

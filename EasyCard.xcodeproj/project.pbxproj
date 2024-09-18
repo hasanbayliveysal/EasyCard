@@ -30,6 +30,7 @@
 		FCF17C5C2C997AC100DD829B /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF17C5B2C997AC100DD829B /* WelcomeViewModel.swift */; };
 		FCF17C662C99A51A00DD829B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = FCF17C652C99A51A00DD829B /* FirebaseFirestore */; };
 		FCF17C682C99AEC500DD829B /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF17C672C99AEC500DD829B /* CardView.swift */; };
+		FCFF0D392C9AAB1A007C83D9 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFF0D382C9AAB1A007C83D9 /* EmptyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		FCF17C582C997A9A00DD829B /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		FCF17C5B2C997AC100DD829B /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		FCF17C672C99AEC500DD829B /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		FCFF0D382C9AAB1A007C83D9 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				FCF17C1E2C987BDD00DD829B /* HomeViewController.swift */,
 				FCF17C252C987C0500DD829B /* HomeViewModel.swift */,
 				FCF17C672C99AEC500DD829B /* CardView.swift */,
+				FCFF0D382C9AAB1A007C83D9 /* EmptyView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				FCF17C232C987BF100DD829B /* RegisterViewController.swift in Sources */,
 				FCF17C592C997A9A00DD829B /* WelcomeViewController.swift in Sources */,
 				FCF17C2A2C987C1A00DD829B /* RegisterViewModel.swift in Sources */,
+				FCFF0D392C9AAB1A007C83D9 /* EmptyView.swift in Sources */,
 				FCF17C462C98A2E500DD829B /* InputTextField.swift in Sources */,
 				FCF17C542C99692F00DD829B /* KeychainHelper.swift in Sources */,
 				FCF17C072C98766200DD829B /* AppDelegate.swift in Sources */,

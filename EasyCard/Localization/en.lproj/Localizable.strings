@@ -24,3 +24,6 @@
 
 "logout" = "Log Out";
 "doyouwantlogout" = "Do you want to log out?";
+"youdonthave" = "You don't have a card, click 'plus' button to order a card";
+"welcome" = "Welcome to EASYCARD";
+"yourbalance" = "Your balance";

@@ -11,6 +11,9 @@ import FirebaseFirestore
 protocol UserServiceProtocol {
     func saveUserData(with userData: User) async throws
     func getUserData(with id: String) async throws -> User
+    func updateUserData(with userID: String, and cardID: String) async throws
+    func removeCardIDFromUser(userID: String) async throws 
+    func getCurrentUserID() -> String
 }
 
 class UserService: UserServiceProtocol {
@@ -42,26 +45,47 @@ class UserService: UserServiceProtocol {
         }
         return User(id: id, name: name, number: number, birthDate: birthDate, cardID: (data?["cardID"] as? String))
     }
+    
+    func updateUserData(with userID: String, and cardID: String) async throws {
+        let userRef = db.collection("users").document(userID)
+        do {
+            try await userRef.updateData([
+                "cardID" : cardID ])
+        } catch {
+            throw error
+        }
+    }
+    
+    
+    func removeCardIDFromUser(userID: String) async throws {
+        
+        let userRef = db.collection("users").document(userID)
+        do {
+            try await userRef.updateData([
+                "cardID": FieldValue.delete()
+            ])
+        } catch {
+            throw error
+        }
+    }
+    
+    func getCurrentUserID() -> String {
+        guard let id = UserDefaults.standard.string(forKey: "currentUserID") else {
+            return ""
+        }
+        return id
+    }
+    
 }
 
 
 struct User {
+    
     let id: String
     let name: String
     let number: String
     let birthDate: String
     var cardID: String?
-}
-
-
-struct Card: Decodable {
-    
-    let id: String
-    let type: String
-    let ownerID: String
-    let code: String
-    let cvv: String
-    let balance: String
-    let date: String
     
 }
+
