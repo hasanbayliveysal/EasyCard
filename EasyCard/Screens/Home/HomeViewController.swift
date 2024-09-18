@@ -169,7 +169,8 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         }
         
         vm.cancelButtonClicked = { [weak self] in
-            self?.reloadAllViewElements()
+            self?.activityIndicator.stopAnimating()
+            self?.blurEffectView.isHidden = true
         }
         
         cardActionsView.deleteButtonClicked = {
